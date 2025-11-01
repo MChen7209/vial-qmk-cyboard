@@ -352,6 +352,7 @@ _Static_assert(MO(1) == 0x5221, "");
 _Static_assert(DF(1) == 0x5241, "");
 _Static_assert(TG(1) == 0x5261, "");
 _Static_assert(OSL(1) == 0x5281, "");
+_Static_assert(PDF(1) == 0x52E1, "");
 _Static_assert(LM(1, KC_A) == 0x5024, "");
 _Static_assert(OSM(MOD_RSFT) == 0x52B2, "");
 _Static_assert(TT(1) == 0x52C1, "");
@@ -524,6 +525,7 @@ _Static_assert(MAGIC_UNSWAP_ALT_GUI == 0x7015, "");
 _Static_assert(MAGIC_TOGGLE_ALT_GUI == 0x7016, "");
 _Static_assert(MAGIC_NO_GUI == 0x700A, "");
 _Static_assert(MAGIC_UNNO_GUI == 0x7009, "");
+_Static_assert(MAGIC_TOGGLE_GUI == 0x700B, "");
 _Static_assert(MAGIC_SWAP_GRAVE_ESC == 0x700C, "");
 _Static_assert(MAGIC_UNSWAP_GRAVE_ESC == 0x700D, "");
 _Static_assert(MAGIC_SWAP_BACKSLASH_BACKSPACE == 0x700E, "");
@@ -810,8 +812,13 @@ _Static_assert(MI_BENDU == 0x718F, "");
 
 _Static_assert(RESET == 0x7C00, "");
 
+_Static_assert(QK_CAPS_WORD_TOGGLE == 0x7C73, "");
+
 _Static_assert(FN_MO13 == 0x7C77, "");
 _Static_assert(FN_MO23 == 0x7C78, "");
+_Static_assert(QK_REPEAT_KEY == 0x7C79, "");
+_Static_assert(QK_ALT_REPEAT_KEY == 0x7C7A, "");
+_Static_assert(QK_LAYER_LOCK == 0x7C7B, "");
 
 /* Ensure that we have 64 USERxx keycodes */
 _Static_assert(QK_KB == 0x7E00, "");
