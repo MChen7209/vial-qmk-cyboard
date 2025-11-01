@@ -14,6 +14,10 @@ where `{MODEL}` can be `imprint` or `dactyl`
 , `{THUMB STYLE}` can be `imprint`, `manuform`, `dual_arcs`, or `single_arc`
 , and `{ROWS}` can be `function_row`, `number_row`, or `letters_only`
 
+## Example
+`make cyboard/imprint/imprint_function_row_full_bottom_row:vial`
+
+
 ## Flashing
 
 > [!IMPORTANT]  
