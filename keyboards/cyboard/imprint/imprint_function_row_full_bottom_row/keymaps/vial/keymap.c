@@ -17,24 +17,32 @@ const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
+    /* 
+        |       Key	        |       Aliases	      |                 Description               |
+        |-------------------|---------------------|-------------------------------------------|
+        |   KC_NO	        |   XXXXXXX	          |         Ignore this key (NOOP)            |
+        |   KC_TRANSPARENT	|   KC_TRNS, _______  | Use the next lowest non-transparent key   |
+    */
+
     // [0] = LAYOUT_fun_full_bottom_row(
     //     KC_ESC,  KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,                                                            KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,
     //     KC_EQL,  KC_1,     KC_2,    KC_3,    KC_4,    KC_5,                                                             KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
     //     KC_TAB,  KC_Q,     KC_W,    KC_E,    KC_R,    KC_T,                                                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
     //     KC_LCTL, KC_A,     KC_S,    KC_D,    KC_F,    KC_G,                                                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
     //     KC_LSFT, KC_Z,     KC_X,    KC_C,    KC_V,    KC_B,                                                             KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-    //     KC_LEFT, KC_RIGHT, KC_LGUI, KC_LALT, KC_QUOT,           KC_LGUI, KC_ENT, KC_DEL, KC_BSPC,   KC_SPC,   MO(1),    KC_LBRC, KC_LBRC,  KC_RBRC, KC_UP, KC_DOWN,
+    //     KC_LEFT, KC_RIGHT, KC_LGUI, KC_LALT, KC_QUOT,       /**/KC_LGUI, KC_ENT, KC_DEL, KC_BSPC,   KC_SPC,   MO(1),/**/KC_LBRC, KC_LBRC,  KC_RBRC, KC_UP, KC_DOWN,
     //                                                             KC_HOME, KC_END, KC_ESC, KC_GRAVE,  KC_CAPS,  KC_APP
     // ),
 
+    /* Enthium V11 (YOU/CIA) */
     [0] = LAYOUT_fun_full_bottom_row(
-        KC_F1,   KC_F2,    KC_F3,   KC_F4,   KC_F5,   KC_F6,                                                            KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
-        KC_EQL,  KC_1,     KC_2,    KC_3,    KC_4,    KC_5,                                                             KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
-        KC_TAB,  KC_Q,     KC_W,    KC_E,    KC_R,    KC_T,                                                             KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSLS,
-        KC_LCTL, KC_A,     KC_S,    KC_D,    KC_F,    KC_G,                                                             KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        KC_LSFT, KC_Z,     KC_X,    KC_C,    KC_V,    KC_B,                                                             KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-        KC_LEFT, KC_RIGHT, KC_LGUI, KC_LALT, KC_QUOT,           KC_LGUI, KC_ENT, KC_DEL, KC_BSPC,   KC_SPC,   MO(1),    KC_LBRC, KC_LBRC,  KC_RBRC, KC_UP, KC_DOWN,
-                                                                KC_HOME, KC_END, KC_ESC, KC_GRAVE,  KC_CAPS,  KC_APP
+        KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6,                                                                                    KC_F7, KC_F8, KC_F9, KC_F10, KC_F11, KC_F12,
+        KC_NO, KC_1, KC_2, KC_3, KC_4, KC_5,                                                                                         KC_6, KC_7, KC_8, KC_9, KC_0, KC_NO,
+        KC_NO, KC_Z, KC_Y, KC_O, KC_U, KC_EQUAL,                                                                                     KC_Q, KC_L, KC_D, KC_P, KC_X, KC_NO,
+        KC_W, LGUI_T(KC_C), LALT_T(KC_I), LCTL_T(KC_A), LSFT_T(KC_E), KC_SEMICOLON,                                                  KC_K, RSFT_T(KC_H), RCTL_T(KC_T), LALT_T(KC_N), RGUI_T(KC_S), KC_F,
+        QK_CAPS_WORD_TOGGLE, KC_Z, KC_X, KC_C, KC_V, KC_B,                                                                           KC_J, KC_M, KC_G, KC_P, KC_V, QK_CAPS_WORD_TOGGLE,
+        MO(3), KC_BACKSLASH, KC_LEFT_BRACKET, KC_RIGHT_BRACKET, KC_GRAVE,/**/KC_ESCAPE, LSFT(KC_9), LSFT(KC_0), KC_HOME, KC_END, KC_ENTER,/**/KC_LEFT, KC_UP,  KC_DOWN, KC_RIGHT, MO(3),
+                                                                            LT(1, KC_SPACE), KC_TAB, KC_INSERT, KC_DELETE,  KC_BACKSPACE,  KC_R
     ),
 
     [1] = LAYOUT_fun_full_bottom_row(
@@ -75,7 +83,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______, _______, _______, _______, _______, _______,                                                           _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______,            _______, _______, _______, _______, _______, _______,   _______, _______, _______, _______, _______,
                                                                 _______, _______, _______, _______, _______, _______
-
+    ),
     [5] = LAYOUT_fun_full_bottom_row(
         _______, _______, _______, _______, _______, _______,                                                           _______, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,                                                           _______, _______, _______, _______, _______, _______,
