@@ -57,6 +57,7 @@
 
 // Tap-Hold
 
-#define TAPPING_TERM 175
+#define TAPPING_TERM 175          // Default Tapping Term
+#define TAPPING_TERM_PER_KEY      // Allow Tapping Terms per key
 #define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT

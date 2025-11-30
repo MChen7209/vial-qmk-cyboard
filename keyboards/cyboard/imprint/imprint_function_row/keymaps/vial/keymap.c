@@ -31,7 +31,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [1] = LAYOUT_fun(
         _______, _______, _______, _______, _______, _______,                       _______, _______, _______, _______, _______, _______,
         _______, _______, LCA(KC_LEFT), LCAG(KC_LEFT), HYPR(KC_LEFT), _______,      _______, LCA(KC_RIGHT), LCAG(KC_RIGHT), HYPR(KC_RIGHT), _______, _______,
-        LCA(KC_UP)  , _______, _______, LCTL(KC_LEFT), LCTL(KC_RIGHT), TD(5),       LGUI(KC_LEFT), LALT(KC_LEFT), KC_UP,   LALT(KC_RIGHT),  LGUI(KC_RIGHT), LCAG(KC_UP),
+        LCA(KC_UP)  , _______, _______, LCTL(KC_LEFT), LCTL(KC_RIGHT), TD(TD_0),    LGUI(KC_LEFT), LALT(KC_LEFT), KC_UP,   LALT(KC_RIGHT),  LGUI(KC_RIGHT), LCAG(KC_UP),
         LCA(KC_DOWN), _______, _______, LSG(KC_X),     LSG(KC_2), HYPR(KC_9),       _______, KC_LEFT, KC_DOWN, KC_RIGHT, _______, LCAG(KC_RIGHT),
         _______, _______, _______, _______, LSG(KC_3), _______,                     _______, _______, _______, _______, _______, _______,
                           _______, _______, _______, _______, _______,              _______, _______, _______, _______, _______,
@@ -118,3 +118,56 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
                                             _______, _______, _______,         _______, _______, _______
     )
 };
+
+
+//-------------------------------------------------------------------------
+// Tap Dances
+//-------------------------------------------------------------------------
+enum {
+    TD_0,
+}
+
+tap_dance_action_t tap_dance_actions[] = {
+    [TD_0] = ACTION_TAP_DANCE_DOUBLE(KC_F12, LSFT(KC_F12))
+}
+
+TD_GENERAL = 150
+LT_GENERAL = 175
+
+uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        //-------------------------------------------------------------------------
+        // Homerow
+        //-------------------------------------------------------------------------
+        case LCTL_T(KC_A):
+        case RCTL_T(KC_O):
+            return 210;
+
+        case LALT_T(KC_R):
+        case RALT_T(KC_I):
+            return 190;
+
+        case LSFT_T(KC_T):
+        case RSFT_T(KC_N):
+            return 135;
+
+        case LGUI_T(KC_S):
+        case RGUI_T(KC_E):
+            return 160;
+
+        //-------------------------------------------------------------------------
+        // Others
+        //-------------------------------------------------------------------------
+
+        // case LSFT_T(KC_ESC):
+        // case TD(TD_F12_SHIFT_F12):
+        //     return HT_GENERAL;
+
+        case LT(4, KC_G):
+        case LT(1, KC_SPC):
+            return LT_GENERAL;
+
+        default:
+            return TAPPING_TERM;
+    }
+}
