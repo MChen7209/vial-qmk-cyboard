@@ -5,6 +5,17 @@
 #include QMK_KEYBOARD_H
 #include <cyboard.h>
 
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
+    LAYOUT_fun_full_bottom_row(
+        'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
+        'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
+                  'L', 'L', '*', '*', '*',                         '*', '*', '*', 'R', 'R'
+                            '*', '*', '*',                         '*', '*', '*'
+    );
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [0] = LAYOUT_fun(
