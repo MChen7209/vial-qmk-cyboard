@@ -53,3 +53,10 @@
 #define POINTING_DEVICE_TASK_THROTTLE_MS 1
 #define CHARYBDIS_CONFIG_DUAL_SYNC
 #define PMW3360_LIFTOFF_DISTANCE 0x02 //default 0x02, 2mm liftoff distance
+
+
+// Tap-Hold
+
+#define TAPPING_TERM 175
+#define PERMISSIVE_HOLD
+#define IGNORE_MOD_TAP_INTERRUPT
