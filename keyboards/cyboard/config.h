@@ -61,3 +61,6 @@
 #define TAPPING_TERM_PER_KEY      // Allow Tapping Terms per key
 #define PERMISSIVE_HOLD
 #define IGNORE_MOD_TAP_INTERRUPT
+// #define QUICK_TAP_TERM = 100      // When a user holds a key after tapping it, the tapping function is repeated by default.
+#define FLOW_TAP_ENABLE
+#define FLOW_TAP_TERM = 135       // Modifies MT and LT so when a short timeout of the preceedingk ey, the tapping behavior is triggered.
