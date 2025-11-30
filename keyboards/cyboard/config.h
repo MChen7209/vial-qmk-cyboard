@@ -12,10 +12,10 @@
 #ifdef RGB_MATRIX_ENABLE
 #    define WS2812_PIO_USE_PIO1 // Force the usage of PIO1 peripheral, by default the WS2812 implementation uses the PIO0 peripheral
 #    define SPLIT_TRANSPORT_MIRROR
-#    define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_RAINBOW_MOVING_CHEVRON // Sets the default mode, if none has been set
+#    define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_SOLID_REACTIVE // Sets the default mode, if none has been set
 #    define RGB_MATRIX_DEFAULT_HUE 33 // Sets the default hue value, if none has been set
 #    define RGB_MATRIX_DEFAULT_SAT 255 // Sets the default saturation value, if none has been set
-#    define RGB_MATRIX_DEFAULT_SPD 30
+#    define RGB_MATRIX_DEFAULT_SPD 50
 #    define RGB_MATRIX_DEFAULT_VAL RGB_MATRIX_MAXIMUM_BRIGHTNESS
 #    define RGB_DISABLE_WHEN_USB_SUSPENDED
 #    define RGB_MATRIX_KEYPRESSES
@@ -58,9 +58,8 @@
 // Tap-Hold
 
 #define TAPPING_TERM 175          // Default Tapping Term
-#define TAPPING_TERM_PER_KEY      // Allow Tapping Terms per key
 #define PERMISSIVE_HOLD
-#define IGNORE_MOD_TAP_INTERRUPT
-// #define QUICK_TAP_TERM = 100      // When a user holds a key after tapping it, the tapping function is repeated by default.
 #define FLOW_TAP_ENABLE
-#define FLOW_TAP_TERM = 135       // Modifies MT and LT so when a short timeout of the preceedingk ey, the tapping behavior is triggered.
+// #define TAPPING_TERM_PER_KEY      // Allow Tapping Terms per key
+// #define QUICK_TAP_TERM = 100      // When a user holds a key after tapping it, the tapping function is repeated by default.
+// #define FLOW_TAP_TERM = 135       // Modifies MT and LT so when a short timeout of the preceedingk ey, the tapping behavior is triggered.
