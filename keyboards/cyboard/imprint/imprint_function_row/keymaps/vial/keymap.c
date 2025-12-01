@@ -4,18 +4,17 @@
 
 #include QMK_KEYBOARD_H
 #include <cyboard.h>
-#include <tap_dances.h>
+// #include <tap_dances.h>
 
-const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM =
-    LAYOUT_fun(
-        'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
-        'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
-        'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
-        'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
-        'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
-                  'L', 'L', '*', '*', '*',                         '*', '*', '*', 'R', 'R',
-                            '*', '*', '*',                         '*', '*', '*'
-    );
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT_fun(
+    'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
+    'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
+    'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
+    'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
+    'L', 'L', 'L', 'L', 'L', 'L',                                   'R', 'R', 'R', 'R', 'R', 'R',
+              'L', 'L', '*', '*', '*',                         '*', '*', '*', 'R', 'R',
+                        '*', '*', '*',                         '*', '*', '*'
+);
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -23,26 +22,28 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_F11,  KC_F1, KC_F2,       KC_F3,   KC_F4,   KC_F5,                               KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F12,
         KC_GRV,  KC_1,  KC_2,        KC_3,    KC_4,    KC_5,                                KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_MINS,
         KC_TAB,  KC_Q,  LT(1, KC_W), KC_F,    KC_P,    KC_B,                                KC_J,    KC_L,    KC_U,    KC_Y,    KC_SCLN, KC_BSLS,
- LSFT_T(KC_ESC), LCTL_T(KC_A), LALT_T(KC_R), LGUI_T(KC_S), LSFT_T(KC_T), LT(4, KC_G),       KC_M,    RSFT_T(KC_N), RGUI_T(KC_E), RALT_T(KC_I), RCTL_T(KC_O), KC_QUOT,
+ LSFT_T(KC_ESC), LCTL_T(KC_A), LALT_T(KC_R), LGUI_T(KC_S), LSFT_T(KC_T), LT(2, KC_G),       KC_M,    RSFT_T(KC_N), RGUI_T(KC_E), RALT_T(KC_I), RCTL_T(KC_O), KC_QUOT,
         KC_LSFT, KC_Z,  KC_X,        KC_C,    KC_D,    KC_V,                                KC_K,    KC_H,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
                         KC_LBRC,     KC_RBRC, KC_LCTL, KC_LGUI, KC_ESC,            MS_BTN1, MS_BTN2, KC_RGUI, KC_EQL,  KC_MINS,
                                           KC_BSPC, KC_LALT, MO(3),                 MS_BTN3, KC_ENT,  LT(1, KC_SPC)
     ),
 
+    // Windows
     [1] = LAYOUT_fun(
         _______, _______, _______, _______, _______, _______,                       _______, _______, _______, _______, _______, _______,
         _______, _______, LCA(KC_LEFT), LCAG(KC_LEFT), HYPR(KC_LEFT), _______,      _______, LCA(KC_RIGHT), LCAG(KC_RIGHT), HYPR(KC_RIGHT), _______, _______,
-        LCA(KC_UP)  , _______, _______, LCTL(KC_LEFT), LCTL(KC_RIGHT), TD(TD_0),    LGUI(KC_LEFT), LALT(KC_LEFT), KC_UP,   LALT(KC_RIGHT),  LGUI(KC_RIGHT), LCAG(KC_UP),
+        LCA(KC_UP)  , _______, _______, LCTL(KC_LEFT), LCTL(KC_RIGHT), _______,    LGUI(KC_LEFT), LALT(KC_LEFT), KC_UP,   LALT(KC_RIGHT),  LGUI(KC_RIGHT), LCAG(KC_UP),
         LCA(KC_DOWN), _______, _______, LSG(KC_X),     LSG(KC_2), HYPR(KC_9),       _______, KC_LEFT, KC_DOWN, KC_RIGHT, _______, LCAG(KC_RIGHT),
         _______, _______, _______, _______, LSG(KC_3), _______,                     _______, _______, _______, _______, _______, _______,
                           _______, _______, _______, _______, _______,              _______, _______, _______, _______, _______,
                                             HYPR(KC_SPC), _______, _______,         _______, _______, _______
     ),
 
+    // Vim
     [2] = LAYOUT_fun(
         _______,  _______,    _______,    _______,    _______,      _______,             _______, _______, _______, _______, _______, _______,
         _______,  LALT(KC_1), LALT(KC_2), LALT(KC_3), LALT(KC_4),   LALT(KC_5),          LALT(KC_6), LALT(KC_7), LALT(KC_8), LALT(KC_9), LALT(KC_0), _______,
-        TD(KC_2), _______,    _______,    LCTL(KC_F), _______,      _______,             _______, _______, _______, _______, _______, _______,
+        L, _______,    _______,    LCTL(KC_F), _______,      _______,             _______, _______, _______, _______, _______, _______,
         _______,  LCTL(KC_A), LCTL(KC_R),  _______,   LCTL(KC_SPC), _______,             LALT(KC_M), LALT(KC_N), LALT(KC_E), LALT(KC_I), LALT(KC_O), LALT(KC_I),
         _______,  _______,    _______,    _______,    _______,      _______,             LALT(KC_K), _______, _______, _______, _______, _______,
                               _______,    _______,    _______,      _______, _______,    _______, _______, _______, _______, _______,
